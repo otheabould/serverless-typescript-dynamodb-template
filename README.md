@@ -1,4 +1,4 @@
-# Serverless - AWS Node.js Typescript
+# Serverless - AWS Node.js Typescript DynamoDB
 
 This project has been generated using the `aws-nodejs-typescript` template from the [Serverless framework](https://www.serverless.com/).
 
@@ -14,7 +14,7 @@ For detailed instructions, please refer to the [documentation](https://www.serve
 - Run `npm start` to start your service locally
 - Run `npx sls deploy` to deploy this stack to AWS
 
-### Testing Locally
+### Testing locally
 
 In order to test the hello function locally, run the following command:
 
