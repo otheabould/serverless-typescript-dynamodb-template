@@ -119,7 +119,7 @@ const serverlessConfiguration: AWS = {
           sources: [
             {
               table: "${param:dynamodbTable}",
-              sources: ["./seed-data.json"],
+              sources: ["./offline/seed-data.json"],
             },
           ],
         },
