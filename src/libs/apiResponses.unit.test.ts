@@ -1,65 +1,141 @@
 import Responses from "./apiResponses";
 
-test("Responses is an object", () => {
-  expect(Responses).toBeInstanceOf(Object);
+describe("Responses", () => {
+  it("should be an object", () => {
+    expect(Responses).toBeInstanceOf(Object);
+  });
 });
 
-test("_DefineResponse", () => {
-  const res = Responses._DefineResponse(382, { any: "thing" });
+describe("_DefineResponse", () => {
+  it("should be a function", () => {
+    expect(Responses._DefineResponse).toBeInstanceOf(Function);
+  });
 
-  expect(res.statusCode).toBe(382);
-  expect(res.headers["Content-Type"]).toBe("application/json");
+  const data = { any: "thing" };
+  const res = Responses._DefineResponse(382, data);
 
-  expect(typeof res.body).toBe("string");
-  expect(res.body).toBe(JSON.stringify({ any: "thing" }));
+  it("should return an object", () => {
+    expect(res).toBeInstanceOf(Object);
+  });
+
+  it("should set the Content-Type header", () => {
+    expect(res.headers["Content-Type"]).toBe("application/json");
+  });
+
+  it("should set the status code", () => {
+    expect(res.statusCode).toBe(382);
+  });
+
+  it("should set the body", () => {
+    expect(typeof res.body).toBe("string");
+    expect(res.body).toBe(JSON.stringify(data));
+  });
 });
 
-test("_200 works", () => {
-  const res = Responses._200({ message: "Hello" });
+describe("_200", () => {
+  it("should be a function", () => {
+    expect(Responses._200).toBeInstanceOf(Function);
+  });
 
-  expect(res.statusCode).toBe(200);
-  expect(res.headers["Content-Type"]).toBe("application/json");
+  const res = Responses._200({ any: "thing" });
+  it("should return an object", () => {
+    expect(res).toBeInstanceOf(Object);
+  });
 
-  expect(typeof res.body).toBe("string");
-  expect(res.body).toBe(JSON.stringify({ message: "Hello" }));
+  it("should set the status code", () => {
+    expect(res.statusCode).toBe(200);
+  });
+
+  it("should set the body", () => {
+    expect(typeof res.body).toBe("string");
+    expect(res.body).toBe(JSON.stringify({ any: "thing" }));
+  });
 });
 
-test("_400 works", () => {
-  const res = Responses._400("Hello");
+describe("_400", () => {
+  it("should be a function", () => {
+    expect(Responses._400).toBeInstanceOf(Function);
+  });
 
-  expect(res.statusCode).toBe(400);
-  expect(res.headers["Content-Type"]).toBe("application/json");
+  const data = "Hello";
+  const res = Responses._400(data);
 
-  expect(typeof res.body).toBe("string");
-  expect(res.body).toBe(JSON.stringify({ message: "Hello" }));
+  it("should return an object", () => {
+    expect(res).toBeInstanceOf(Object);
+  });
+
+  it("should set the status code", () => {
+    expect(res.statusCode).toBe(400);
+  });
+
+  it("should set the body", () => {
+    expect(typeof res.body).toBe("string");
+    expect(res.body).toBe(JSON.stringify({ message: data }));
+  });
 });
 
-test("_404 works", () => {
-  const res = Responses._404("Hello");
+describe("_404", () => {
+  it("should be a function", () => {
+    expect(Responses._404).toBeInstanceOf(Function);
+  });
 
-  expect(res.statusCode).toBe(404);
-  expect(res.headers["Content-Type"]).toBe("application/json");
+  const data = "Hello";
+  const res = Responses._404(data);
 
-  expect(typeof res.body).toBe("string");
-  expect(res.body).toBe(JSON.stringify({ message: "Hello" }));
+  it("should return an object", () => {
+    expect(res).toBeInstanceOf(Object);
+  });
+
+  it("should set the status code", () => {
+    expect(res.statusCode).toBe(404);
+  });
+
+  it("should set the body", () => {
+    expect(typeof res.body).toBe("string");
+    expect(res.body).toBe(JSON.stringify({ message: data }));
+  });
 });
 
-test("_409 works", () => {
-  const res = Responses._409("Hello");
+describe("_409", () => {
+  it("should be a function", () => {
+    expect(Responses._409).toBeInstanceOf(Function);
+  });
 
-  expect(res.statusCode).toBe(409);
-  expect(res.headers["Content-Type"]).toBe("application/json");
+  const data = "Hello";
+  const res = Responses._409(data);
 
-  expect(typeof res.body).toBe("string");
-  expect(res.body).toBe(JSON.stringify({ message: "Hello" }));
+  it("should return an object", () => {
+    expect(res).toBeInstanceOf(Object);
+  });
+
+  it("should set the status code", () => {
+    expect(res.statusCode).toBe(409);
+  });
+
+  it("should set the body", () => {
+    expect(typeof res.body).toBe("string");
+    expect(res.body).toBe(JSON.stringify({ message: data }));
+  });
 });
 
-test("_500 works", () => {
-  const res = Responses._500("Hello");
+describe("_500", () => {
+  it("should be a function", () => {
+    expect(Responses._500).toBeInstanceOf(Function);
+  });
 
-  expect(res.statusCode).toBe(500);
-  expect(res.headers["Content-Type"]).toBe("application/json");
+  const data = "Hello";
+  const res = Responses._500(data);
 
-  expect(typeof res.body).toBe("string");
-  expect(res.body).toBe(JSON.stringify({ message: "Hello" }));
+  it("should return an object", () => {
+    expect(res).toBeInstanceOf(Object);
+  });
+
+  it("should set the status code", () => {
+    expect(res.statusCode).toBe(500);
+  });
+
+  it("should set the body", () => {
+    expect(typeof res.body).toBe("string");
+    expect(res.body).toBe(JSON.stringify({ message: data }));
+  });
 });

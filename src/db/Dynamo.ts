@@ -18,4 +18,10 @@ if (IS_TEST) {
   };
 }
 
+export interface ITest {
+  id: string;
+  createdAt: number;
+  name: string;
+}
+
 export default new DocumentClient(options);

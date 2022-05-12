@@ -1,5 +1,7 @@
 import Dynamo from "./Dynamo";
 
-test("Dynamo is an object", () => {
-  expect(Dynamo).toBeInstanceOf(Object);
+describe("Dynamo", () => {
+  it("should be an object", () => {
+    expect(Dynamo).toBeInstanceOf(Object);
+  });
 });
