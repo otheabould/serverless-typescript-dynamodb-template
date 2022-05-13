@@ -1,4 +1,4 @@
-import { middyfy } from "./lambda";
+import { middyfy } from "./middlewares";
 
 describe("middyfy", () => {
   it("should be a function", () => {

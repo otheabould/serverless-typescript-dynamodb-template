@@ -30,7 +30,7 @@ const serverlessConfiguration: AWS = {
 
     environment: {
       DYNAMODB_TABLE: "${param:dynamodbTable}",
-      allow: "${param:allowOrigin}",
+      ALLOW_ORIGIN: "${param:allowOrigin}",
     },
 
     iamRoleStatements: [

@@ -1,6 +1,6 @@
 import type { ValidatedEventAPIGatewayProxyEvent } from "@libs/api-gateway";
 import Responses from "@libs/apiResponses";
-import { middyfy } from "@libs/lambda";
+import { middyfy } from "@libs/middlewares";
 import schema from "./schema";
 
 const hello: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (
