@@ -5,7 +5,8 @@
   "main": "serverless.ts",
   "scripts": {
     "start": "sls offline start",
-    "test": "jest"
+    "test": "jest --verbose",
+    "prepare": "husky install"
   },
   "engines": {
     "node": ">=14.15.0"
@@ -29,6 +30,7 @@
     "eslint": "^8.10.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^8.0.1",
     "jest": "27.0.0",
     "json-schema-to-ts": "^1.5.0",
     "prettier": "^2.5.1",
