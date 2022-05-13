@@ -7,6 +7,15 @@ describe("create", () => {
     expect(create).toBeInstanceOf(Function);
   });
 
+  it("should return the new item", async () => {
+    const data: ICreate = { name: "test" };
+    const result = await create(data);
+
+    expect(result.id).toBeTruthy();
+    expect(result.createdAt).toBeGreaterThan(0);
+    expect(result.name).toBe(data.name);
+  });
+
   it("should insert item into table", async () => {
     const data: ICreate = { name: "test" };
     const result = await create(data);
