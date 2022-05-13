@@ -73,6 +73,7 @@ const serverlessConfiguration: AWS = {
 
     prod: {
       domainName: "my-prod-domain",
+      allowOrigin: "${env:ALLOW_ORIGIN}",
     },
   },
 
