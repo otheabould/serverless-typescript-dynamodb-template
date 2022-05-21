@@ -32,7 +32,7 @@ jobs:
     - run: npm test
 
     - name: "Echo origin"
-      run: echo " ALLOW_ORIGIN='${{ secrets.ALLOW_ORIGIN }}' SLS_STAGE='${{ secrets.SLS_STAGE }}' AWS_ACCESS_KEY_ID='${{ secrets.AWS_ACCESS_KEY_ID }}'"
+      run: echo " ALLOW_ORIGIN='${{ env.ALLOW_ORIGIN }}' SLS_STAGE='${{ secrets.SLS_STAGE }}' AWS_ACCESS_KEY_ID='${{ secrets.AWS_ACCESS_KEY_ID }}'"
       env:
         First_Name: Mona
 
