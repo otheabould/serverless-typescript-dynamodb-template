@@ -4,9 +4,6 @@ on:
   push:
     branches: [ main ]
 
-env:
-  ALLOW_ORIGIN: ${{ secrets.ALLOW_ORIGIN }}
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -33,4 +30,7 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
+
     - run: npm run deploy --stage ${{ secrets.SLS_STAGE }}
+      env:
+        ALLOW_ORIGIN: ${{ secrets.ALLOW_ORIGIN }}
