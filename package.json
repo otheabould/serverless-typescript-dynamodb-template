@@ -6,7 +6,8 @@
   "scripts": {
     "start": "sls offline start",
     "test": "jest --verbose",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "deploy": "sls deploy"
   },
   "engines": {
     "node": ">=14.15.0"
