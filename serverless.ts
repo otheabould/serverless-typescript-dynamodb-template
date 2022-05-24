@@ -57,23 +57,24 @@ const serverlessConfiguration: AWS = {
       accountId: "${aws:accountId}",
       region: "${opt:region, self:provider.region}",
       dynamodbTable: "${self:service}-${param:stage}",
-    },
-
-    dev: {
-      domainName: "my-dev-domain",
-      allowOrigin: "*",
 
       dynamodbTableReadThroughput: 1,
       dynamodbTableWriteThroughput: 1,
     },
 
+    dev: {
+      domainName: "my-dev-domain",
+      allowOrigin: "*",
+    },
+
     staging: {
       domainName: "my-staging-domain",
+      allowOrigin: "*",
     },
 
     prod: {
       domainName: "my-prod-domain",
-      allowOrigin: "${env:ALLOW_ORIGIN}",
+      allowOrigin: "${env:ALLOW_ORIGIN, ''}",
     },
   },
 
