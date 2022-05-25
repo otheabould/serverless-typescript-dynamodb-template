@@ -105,7 +105,7 @@ const serverlessConfiguration: AWS = {
     dynamodb: {
       stages: ["dev"],
       start: {
-        port: 8008,
+        port: 8000,
         inMemory: true,
         heapInitial: "200m",
         heapMax: "1g",
@@ -113,7 +113,9 @@ const serverlessConfiguration: AWS = {
         seed: true,
         convertEmptyValues: true,
         // Uncomment only if you already have a DynamoDB running locally
-        // noStart: true
+        noStart: true,
+        docker: true,
+        host: "localhost",
       },
 
       seed: {
