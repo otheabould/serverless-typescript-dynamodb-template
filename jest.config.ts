@@ -1,7 +1,7 @@
 import { InitialOptionsTsJest } from "ts-jest";
 
 const config: InitialOptionsTsJest = {
-  verbose: true,
+  verbose: false,
   preset: "@shelf/jest-dynamodb",
   testEnvironment: "node",
   transform: { "^.+\\.tsx?$": "ts-jest" },

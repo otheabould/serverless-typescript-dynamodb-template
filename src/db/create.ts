@@ -3,11 +3,11 @@ import { v1 as uuidv1 } from "uuid";
 
 import Dynamo, { ITest } from "./Dynamo";
 
-export interface ICreate {
+interface ICreateParams {
   name: string;
 }
 
-const create = async (data: ICreate) => {
+const create = async (data: ICreateParams): Promise<ITest> => {
   const id = uuidv1();
   const now = new Date().getTime();
 
@@ -20,6 +20,8 @@ const create = async (data: ICreate) => {
   const params = {
     TableName: DYNAMODB_TABLE,
     Item: item,
+    accessKeyId: "DEFAULT_ACCESS_KEY",
+    secretAccessKey: "DEFAULT_SECRET",
   };
 
   await Dynamo.put(params).promise();

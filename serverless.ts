@@ -1,6 +1,6 @@
 import type { AWS } from "@serverless/typescript";
 
-import hello from "@functions/hello";
+import create from "@functions/create";
 
 const serverlessConfiguration: AWS = {
   service: "serverless-typescript-dynamodb-template",
@@ -81,7 +81,7 @@ const serverlessConfiguration: AWS = {
   package: { individually: true },
 
   // import the function via paths
-  functions: { hello },
+  functions: { create },
 
   custom: {
     customDomain: {
@@ -93,7 +93,7 @@ const serverlessConfiguration: AWS = {
 
     esbuild: {
       bundle: true,
-      minify: false,
+      minify: true,
       sourcemap: true,
       exclude: ["aws-sdk"],
       target: "node14",
@@ -131,7 +131,7 @@ const serverlessConfiguration: AWS = {
     },
 
     ["serverless-offline"]: {
-      httpPort: 8000,
+      httpPort: 8080,
       babelOptions: {
         presets: ["env"],
       },

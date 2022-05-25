@@ -7,6 +7,8 @@ if (IS_OFFLINE) {
   options = {
     region: "localhost",
     endpoint: "http://localhost:8000",
+    accessKeyId: "DEFAULT_ACCESS_KEY",
+    secretAccessKey: "DEFAULT_SECRET",
   };
 }
 
@@ -15,6 +17,8 @@ if (IS_TEST) {
     region: "local-env",
     endpoint: "http://localhost:8000",
     sslEnabled: false,
+    accessKeyId: "DEFAULT_ACCESS_KEY",
+    secretAccessKey: "DEFAULT_SECRET",
   };
 }
 
